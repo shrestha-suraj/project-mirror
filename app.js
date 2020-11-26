@@ -4,7 +4,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var playRouter = require('./routes/play.js');
 
 var app = express();
 
@@ -18,6 +18,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 
 // This route takes in query and plays audio with given string
-app.use('/play', usersRouter);
+app.use('/play', playRouter);
 
 module.exports = app;
